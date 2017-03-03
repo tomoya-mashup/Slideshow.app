@@ -1,26 +1,149 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CcG-Lg-yzf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Bce-gt-a39">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CcG-Lg-yzf" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="o8A-bw-Hxj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pa6-2Z-omG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="g33-5Z-mR7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cE-um-eNQ">
+                                <rect key="frame" x="172.5" y="268" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPlayPause:" destination="CcG-Lg-yzf" eventType="touchUpInside" id="HzS-P0-ECx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="amagasaka.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-nc-XVQ">
+                                <rect key="frame" x="67.5" y="60" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="JXZ-oc-oUG"/>
+                                    <constraint firstAttribute="height" constant="128" id="wlR-az-spX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apm-ur-lB8">
+                                <rect key="frame" x="87.5" y="268" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonBack:" destination="CcG-Lg-yzf" eventType="touchUpInside" id="77h-CQ-RIf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-bw-U9X">
+                                <rect key="frame" x="67.5" y="60" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="7cw-Xm-hSQ"/>
+                                    <constraint firstAttribute="height" constant="128" id="oQR-lO-41B"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="MGb-Qu-3yv" kind="show" id="0VR-9K-lcd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-yb-lwT">
+                                <rect key="frame" x="253.5" y="268" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonNext:" destination="CcG-Lg-yzf" eventType="touchUpInside" id="z7c-iy-8Pu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ddX-bw-U9X" firstAttribute="top" secondItem="o8A-bw-Hxj" secondAttribute="bottom" constant="40" id="0kd-L4-uIx"/>
+                            <constraint firstItem="5cE-um-eNQ" firstAttribute="leading" secondItem="Apm-ur-lB8" secondAttribute="trailing" constant="51" id="1SE-G2-kbf"/>
+                            <constraint firstItem="Apm-ur-lB8" firstAttribute="top" secondItem="ddX-bw-U9X" secondAttribute="bottom" constant="80" id="3vS-73-TM5" userLabel="Button Back.top = Button.bottom + 40"/>
+                            <constraint firstItem="cfw-yb-lwT" firstAttribute="top" secondItem="ddX-bw-U9X" secondAttribute="bottom" constant="80" id="9Fm-q9-fp5" userLabel="Button Next.top = Button.bottom + 40"/>
+                            <constraint firstItem="SPh-nc-XVQ" firstAttribute="centerX" secondItem="g33-5Z-mR7" secondAttribute="centerX" id="CZ1-aH-SKi"/>
+                            <constraint firstItem="5cE-um-eNQ" firstAttribute="top" secondItem="ddX-bw-U9X" secondAttribute="bottom" constant="80" id="Drx-T2-4ll" userLabel="Button Play Pause.top = Button.bottom + 40"/>
+                            <constraint firstItem="5cE-um-eNQ" firstAttribute="top" secondItem="ddX-bw-U9X" secondAttribute="bottom" constant="80" id="Gbh-o4-nwF" userLabel="Button Play Pause.top = Image View.bottom + 40"/>
+                            <constraint firstItem="Apm-ur-lB8" firstAttribute="top" secondItem="ddX-bw-U9X" secondAttribute="bottom" constant="80" id="ZMF-hh-4Rz" userLabel="Button Back.top = Image View.bottom + 40"/>
+                            <constraint firstItem="SPh-nc-XVQ" firstAttribute="top" secondItem="o8A-bw-Hxj" secondAttribute="bottom" constant="40" id="fKf-dD-rkK"/>
+                            <constraint firstItem="ddX-bw-U9X" firstAttribute="centerX" secondItem="g33-5Z-mR7" secondAttribute="centerX" id="gEK-IB-LgE"/>
+                            <constraint firstItem="cfw-yb-lwT" firstAttribute="top" secondItem="ddX-bw-U9X" secondAttribute="bottom" constant="80" id="ir3-X4-I2M" userLabel="Button Next.top = Image View.bottom + 40"/>
+                            <constraint firstItem="cfw-yb-lwT" firstAttribute="leading" secondItem="5cE-um-eNQ" secondAttribute="trailing" constant="51" id="kAb-Ug-Xyp"/>
+                            <constraint firstItem="5cE-um-eNQ" firstAttribute="centerX" secondItem="g33-5Z-mR7" secondAttribute="centerX" id="neX-6c-sqC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonBack" destination="Apm-ur-lB8" id="eiI-Gf-Bt5"/>
+                        <outlet property="buttonNext" destination="cfw-yb-lwT" id="CFE-Pi-HIf"/>
+                        <outlet property="buttonPlayPause" destination="5cE-um-eNQ" id="SXo-36-Y3Y"/>
+                        <outlet property="imageView" destination="SPh-nc-XVQ" id="VNL-yx-WDm"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Syr-UJ-N6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-119.2" y="62.518740629685162"/>
+        </scene>
+        <!--CloseUpViewController-->
+        <scene sceneID="tUZ-S7-osU">
+            <objects>
+                <viewController title="CloseUpViewController" id="MGb-Qu-3yv" customClass="CloseUpViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aqG-hJ-xQ6"/>
+                        <viewControllerLayoutGuide type="bottom" id="I8J-TF-cER"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lkk-9Q-pl1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rl1-C1-SaD">
+                                <rect key="frame" x="30.5" y="28" width="314" height="471"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1y-3I-qgk">
+                                <rect key="frame" x="164.5" y="534" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="rvl-jR-MV9"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s1W-i9-3Na" kind="unwind" unwindAction="unwindWithSegue:" id="W5H-FU-8HN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rl1-C1-SaD" firstAttribute="top" secondItem="aqG-hJ-xQ6" secondAttribute="bottom" constant="8" id="26k-aE-3Bp"/>
+                            <constraint firstItem="Rl1-C1-SaD" firstAttribute="centerX" secondItem="Lkk-9Q-pl1" secondAttribute="centerX" id="31R-LI-dRL"/>
+                            <constraint firstItem="Rl1-C1-SaD" firstAttribute="width" secondItem="Lkk-9Q-pl1" secondAttribute="width" multiplier="0.75" constant="32.5" id="6gx-7o-x39"/>
+                            <constraint firstItem="u1y-3I-qgk" firstAttribute="top" secondItem="Rl1-C1-SaD" secondAttribute="bottom" constant="35" id="THp-Ow-386"/>
+                            <constraint firstItem="I8J-TF-cER" firstAttribute="top" secondItem="u1y-3I-qgk" secondAttribute="bottom" constant="103" id="icL-f4-OVC"/>
+                            <constraint firstItem="u1y-3I-qgk" firstAttribute="centerX" secondItem="Lkk-9Q-pl1" secondAttribute="centerX" id="zY7-8X-o46"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Rl1-C1-SaD" id="ewd-5I-Mb7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ge-Qg-Qk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="s1W-i9-3Na" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="869.60000000000002" y="62.518740629685162"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="amagasaka.jpg" width="1121" height="1121"/>
+    </resources>
 </document>
