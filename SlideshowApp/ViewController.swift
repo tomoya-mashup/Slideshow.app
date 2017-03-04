@@ -44,6 +44,7 @@ class ViewController: UIViewController {
             buttonBack.setTitleColor(UIColor.lightGray, for: .normal)
             buttonNext.isEnabled = false    //次へボタンタップ不可
             buttonNext.setTitleColor(UIColor.lightGray, for: .normal)
+            
 
         }
     }
@@ -54,20 +55,17 @@ class ViewController: UIViewController {
     @IBAction func buttonBack(_ sender: Any) {
         counter = counter - 1
         
-    //現在用意している画像が8枚なので、カウンターが-8より小さくなったら0になる
         if (counter < 0) {
-            counter = 7
+            counter = image.count - 1
         }
         imageView.image = UIImage(named:image[counter])
     }
     
     //進むボタンを押した時のメソッド
     @IBAction func buttonNext(_ sender: Any) {
-    //カウンターに1足して次の画像を表示させる
         counter = counter + 1
         
-    //現在用意している画像は8枚なので、カウンターが8より大きくなったら0になる
-        if ( counter > 7 ) {
+        if ( counter == image.count ) {
             counter = 0
         }
         imageView.image = UIImage(named:image[counter])
@@ -80,6 +78,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let closeUpViewController:CloseUpViewController = segue.destination as! CloseUpViewController
         closeUpViewController.image = imageView.image!
+        
+        timer?.invalidate()
     }
     
     override func viewDidLoad() {
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     func play () {
         counter = counter + 1
         
-        if ( counter > 7 ){
+        if ( counter == image.count ){
             counter = 0
         }
         imageView.image = UIImage(named:image[counter])
